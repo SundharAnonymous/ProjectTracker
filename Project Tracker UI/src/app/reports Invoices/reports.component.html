@@ -1,0 +1,81 @@
+<app-navigationbar></app-navigationbar>
+<body>
+    <section>
+     <div class="imgBx">
+         <img style="z-index: -1;" src="assets/images/rectangle1466.jpg" alt="">
+        
+             <div class="innerBx">
+                 <div class="projects">
+                     <div class="card">
+                         <div class="cardheader">
+                             <h2>Reports Details - Invoice</h2>
+                         </div>
+                         <div class="cardbuttons">
+                             <!-- <input type="text"> -->
+                             <input type="text" [(ngModel)]="invoiceNumber" placeholder="Search Invoices" />
+                             
+                             <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+                             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                             <button class="btn btn-info btn-lg sortby" (click)="sortDataId()">Sort
+                               <span class="glyphicon glyphicon-sort sortsymbol"></span> 
+                         </button>
+
+                             <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+                             
+
+                             
+                         </div>
+                         <div class="cardbody">
+                            <table id="myTable" class="table-responsive" >
+                                <thead>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        
+                                        <td>Invoice Number</td>
+                                        <td>Invoice Amt.  </td>
+                                        <td>Invoice Amt. VAT</td>
+                                        <td>Invoiced Date</td>
+                                        <td>Paid By AKKA</td> 
+                                        
+                                        
+                                        <td>Attachments</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let inv of Invoicedetails | invoiceSearch:invoiceNumber;" class="trow">
+                                     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+                                     <td>
+                                        <button class="w3-text-black material-icons " style="background: transparent; border: transparent;background: transparent;
+                                                                     border: transparent;
+                                                                     font-size: 20px;
+                                                                     position: unset;
+                                                                     padding: 0px;"><i class="fa fa-sticky-note"></i></button>
+                                      </td>
+                                      
+                                        <td>{{inv.invoiceNumber}}</td>
+                                        <td [ngSwitch]="inv.invCurrencyID"><span *ngSwitchCase=1>€</span>
+                                            <span *ngSwitchCase=2>$</span>
+                                            <span *ngSwitchCase=3>₹</span>
+                                            <span *ngSwitchCase=4>£</span>{{inv.invoiceValue}}</td>
+                                            <td [ngSwitch]="inv.invCurrencyID" ><span *ngSwitchCase=1>€</span>
+                                                <span *ngSwitchCase=2>$</span>
+                                                <span *ngSwitchCase=3>₹</span>
+                                                <span *ngSwitchCase=4>£</span>{{inv.invoiceValue_VAT}}</td>
+                                        <td>{{inv.invoiceDate | date:'yyyy/MM/dd'}}</td>
+                                        <td>{{inv.isPaymentDone}}</td>
+                                        <td ><a *ngIf="inv.iAttachment"  href="{{inv.iAttachment}}" target="_blank">See Attachment</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                     </div>
+                 </div>
+     
+             </div>
+         
+         
+         
+     </div>
+ </section>
+ </body>
+ 

@@ -1,0 +1,516 @@
+<app-navigationbar></app-navigationbar>
+
+<body>
+
+  <section>
+    <div class="imgBx">
+      <img style="z-index: -1;" src="assets/images/rectangle1466.jpg" alt="">
+      <button type="submit" style="top: -82vh;
+             position: relative;
+             padding: 9px;
+             margin: -55px;
+             left: -193vh;font-family: Montserrat;
+         font-style: normal;
+          font-weight: normal;
+          background-color: transparent;
+          border-color:transparent ;
+                                              font-size: normal;
+                                              line-height: 25px;
+                                              color: black;
+                                              font-size: 13px;" (click)="backtodashboard()">
+        < Back to Dashboard</button>
+          <div class="innerBx">
+
+
+            <div class="card">
+
+              <div class="cardheader">
+                <link
+                  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+                  rel="stylesheet">
+                <h1 style="left:16%">Add Invoice</h1>
+                <div>
+                  <span>
+                    <h1 style="left:16%; top: 32%">Project Id</h1>
+                  </span>
+                  <span>
+                    <h1 style="left:26%; top: 32%">Project Name</h1>
+                  </span>
+                </div>
+
+                <!-- <a class="viewdetailspage" (click)="viewdetailspage()">see project details</a> -->
+
+                <div class="container">
+                  <!-- <span *ngFor="let item of counts;let i = index"> -->
+
+                  <!-- </span> -->
+                </div>
+              </div>
+
+
+              <form>
+
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+                <div class="cardbody" style="overflow-x: hidden;">
+                  <div class="row">
+                    <div class="col-sm-6"
+                      style="margin-left: 15%; position: absolute; height: 230%; left: 0%; top: 0%;">
+
+                      <link
+                        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+                        rel="stylesheet">
+                      <form [formGroup]="Dropdownform">
+                        <h6>Choose PO Number</h6>
+                        <div class="input-group-prepend">
+                          <select class="" id="" class="projectvaluedd" formControlName="podropdown"
+                            class="textfield form-control">
+                            <!-- <tr *ngFor="let podetails of POProjects" ></tr> -->
+                            <option class="option " [ngValue]="podetails.poguid" *ngFor="let podetails of POProjects">
+                              {{podetails.ltipoNumber}}</option>
+                            <option class="option " [ngValue]='0'>
+                              Show All</option>
+
+
+                          </select>
+                          <button type="submit" (click)="Dropdown(Dropdownform.value)" class="searchbypo"
+                            [disabled]=selectdropdownflag
+                            [ngStyle]="{'background-color':selectdropdownflag? 'grey' :'' ,'border-color':selectdropdownflag? 'grey' :'','color':selectdropdownflag?'white':''}">Select</button>
+                          <button type="submit" (click)="SaveInvoice()" class="SaveChanges"
+                            [disabled]=!selectdropdownflag
+                            [ngStyle]="{'background-color':!selectdropdownflag? 'grey' :'' ,'border-color':!selectdropdownflag? 'grey' :'','color':!selectdropdownflag?'white':''}">Save
+                            Changes</button>
+
+                        </div>
+                      </form>
+                      <h6 style="margin-top: 57px">Invoice Details</h6>
+                      <button class="addbutton" (click)="openModalDialog()" [disabled]=!attribute
+                        [ngStyle]="{'background-color':!attribute? 'grey' :'#01008C' ,'border-color':!attribute? 'grey' :'#01008C'}">+</button>
+                      <span class="addpo">Add
+                        Invoice</span>
+
+                      <div class="backdrop" [ngStyle]="{'display':display}"></div>
+
+                      <!-- modal -->
+                      <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+                        <!-- modal-dialog -->
+                        <div class="modal-dialog" role="document">
+                          <!-- modal-content -->
+                          <div class="modal-content">
+                            <!-- modal-header -->
+                            <div class="modal-header">
+                              <button type="button" class="close closex" aria-label="Close"
+                                (click)="closeModalDialog()"><span aria-hidden="true">&times;</span></button>
+                              <!-- <h4 class="modal-title">Login</h4> -->
+                            </div>
+
+                            <!-- modal-body -->
+                            <div class="modal-body modalbody">
+                              <form [formGroup]="newInvoiceform">
+                                <h6>Invoice Number</h6>
+                                <span><input formControlName="invoiceNumber" class="textfield form-control" type="text"
+                                    name="" placeholder="" id="" name=""> </span>
+
+                                <h6>Invoiced Date</h6>
+                                <span><input formControlName="invoiceDate" class="textfield form-control" type="date"
+                                    name="" placeholder="" id="" name=""> </span>
+
+                                <h6>Invoice Value</h6>
+                                <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                    <select class="cars" id="cars" class="projectvaluedd" (change)="dropdown($event)">
+                                      <option class="option ">Euro</option>
+                                      <option class="option  ">Dollar</option>
+                                      <option class="option  ">Rupees</option>
+                                      <option class="option  ">Pound</option>
+                                    </select>
+                                  </div>
+                                  <input type="number" formControlName="invoiceValue" class="form-control projectvalue"
+                                    placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                                <h6>Invoice Value (inc .VAT)</h6>
+                                <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                    <select class="cars" id="cars" class="projectvaluedd" (change)="dropdown($event)">
+                                      <option class="option ">Euro</option>
+                                      <option class="option  ">Dollar</option>
+                                      <option class="option  ">Rupees</option>
+                                      <option class="option  ">Pound</option>
+                                    </select>
+                                  </div>
+                                  <input type="number" formControlName="invoiceValue_VAT"
+                                    class="form-control projectvalue" placeholder="" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                                </div>
+                                <span>
+                                  <h6>Invoice sent to AKKA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Payment done by AKKA</h6>
+                                </span>
+                                <label class="switch"><input type="checkbox" (click)=toggleDisplayisOppIDCreated()><span
+                                    class="slider round"></span> </label>
+                                <label class="switch" style="left: 21%"><input type="checkbox"
+                                    (click)=toggleDisplayisOppIDCreated()><span class="slider round"></span> </label>
+                                <h6>Attachment</h6>
+                                <span> <input #attachment type="file" class=" textfield" id="attachment"
+                                    name="attachment" formControlName="attachmentvalue"
+                                    (change)="handleUpload($event,attachment.files)" /></span>
+
+                              </form>
+                            </div>
+
+                            <!-- modal-footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" style="bottom: 0px;
+                                                      left: 1px;    background-color: #01008C;
+    border: 1px solid #01008C;
+    color: white;
+    font-family: Montserrat;
+    line-height: 23px;
+    font-size: 13px" (click)="getInvoiceDetailsvalue()">Save</button>
+
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!-- modal -->
+                    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+                      <!-- modal-dialog -->
+                      <div class="modal-dialog" role="document">
+                        <!-- modal-content -->
+                        <div class="modal-content">
+                          <!-- modal-header -->
+                          <div class="modal-header">
+                            <button type="button" class="close closex" aria-label="Close"
+                              (click)="closeModalDialog4()"><span aria-hidden="true">&times;</span></button>
+                            <!-- <h4 class="modal-title">Login</h4> -->
+                          </div>
+
+                          <!-- modal-body -->
+                          <div class="modal-body modalbody">
+                            <form [formGroup]="newInvoiceform">
+                              <h6>Invoice Number</h6>
+                              <span><input formControlName="invoiceNumber" class="textfield form-control" type="text"
+                                  name="" placeholder="" id="" name=""> </span>
+
+                              <h6>Invoiced Date</h6>
+                              <span><input formControlName="invoiceDate" class="textfield form-control" type="date"
+                                  name="" placeholder="" id="" name=""> </span>
+
+                              <h6>Invoice Value</h6>
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <select type="number" class="cars" id="cars" class="projectvaluedd form-control"
+                                    (change)="dropdown($event)" formControlName="invCurrencyID">
+                                    <option [ngValue]=1 class="option">Euro</option>
+                                    <option [ngValue]=2 class="option">Dollar</option>
+                                    <option [ngValue]=3 class="option">Rupees</option>
+                                    <option [ngValue]=4 class="option">Pound</option>
+                                  </select>
+                                </div>
+                                <input type="number" formControlName="invoiceValue" class="form-control projectvalue"
+                                  placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+                              <h6>Invoice Value (inc .VAT)</h6>
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <select class="cars" id="cars" class="projectvaluedd" (change)="dropdown($event)">
+                                    <option class="option ">{{currency}}</option>
+
+                                  </select>
+                                </div>
+                                <input type="number" formControlName="invoiceValue_VAT"
+                                  class="form-control projectvalue" placeholder="" aria-label="Username"
+                                  aria-describedby="basic-addon1">
+                              </div>
+                              <span>
+                                <h6>Invoice sent to AKKA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Payment
+                                  done by AKKA</h6>
+                              </span>
+                              <label class="switch"><input type="checkbox" (click)=toggleDisplayisOppIDCreated()
+                                  formControlName="isInvoiceSent"><span class="slider round"></span> </label>
+                              <label class="switch" style="left: 21%"><input type="checkbox"
+                                  (click)=toggleDisplayisOppIDCreated() formControlName="isPaymentDone"><span
+                                  class="slider round"></span> </label>
+                              <h6>Attachment</h6>
+                              <span> <input #attachment type="file" class=" textfield" id="attachment" name="attachment"
+                                  formControlName="attachmentvalue"
+                                  (change)="handleUpload($event,attachment.files)" /></span>
+                              <!--  -->
+                            </form>
+                          </div>
+
+                          <!-- modal-footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" style="bottom: 0px;
+                                                  left: 1px;    background-color: #01008C;
+border: 1px solid #01008C;
+color: white;
+font-family: Montserrat;
+line-height: 23px;
+font-size: 13px" (click)="getInvoiceDetailsvalue()">Save</button>
+
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <!---->
+
+                    <table id="myTable" class="table-responsive potable">
+                      <thead>
+                        <tr>
+                          <link
+                            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+                            rel="stylesheet">
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>Invoice Number</td>
+                          <td>Invoice Value</td>
+                          <td>Invoiced Date</td>
+                          <td>Invoice Value VAT</td>
+                          <td>Sent to AKKA</td>
+                          <td>Paid by AKKA</td>
+                          <td>Attachments</td>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let invoice of Invoicedetails"
+                          [ngStyle]="{'display':attribute == false ? 'none' :'' }">
+                          <td><button style="font-size: 21px; background-color: transparent; border: transparent;background: transparent;
+                                                    border: transparent;
+                                                    font-size: 20px;
+                                                    position: unset;
+                                                    padding: 0px;"
+                              (click)="openModalDialog4(invoice,invoice.invoiceID)"> <i class="fa fa-edit"></i></button>
+                          </td>
+
+
+
+
+                          <td>
+                            <button class="w3-text-black material-icons " style="background: transparent; border: transparent;background: transparent;
+                                                         border: transparent;
+                                                         font-size: 20px;
+                                                         position: unset;
+                                                         padding: 0px;"
+                              (click)="ViewModelInvoiceDelete(invoice.invoiceID)">delete</button>
+                          </td>
+                          <td>{{invoice.invoiceNumber}}</td>
+
+                          <td [ngSwitch]="invoice.invCurrencyID"><span *ngIf="invoice.invoiceValue"><span
+                                *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span>{{invoice.invoiceValue}}</span></td>
+
+                          <td>{{invoice.invoiceDate | date:'yyyy/MM/dd'}}</td>
+
+                          <td [ngSwitch]="invoice.invCurrencyID"><span *ngIf="invoice.invoiceValue_VAT"><span
+                                *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span>{{invoice.invoiceValue_VAT}}</span></td>
+
+                          <td>{{invoice.isInvoiceSent}}</td>
+
+                          <td>{{invoice.isPaymentDone}}</td>
+                          <td><a href="{{invoice.iAttachment}}" *ngIf="invoice.iAttachment">See Attachment</a></td>
+
+                        </tr>
+
+
+
+
+
+
+
+
+                        <tr *ngFor="let invoice of Invoice">
+                          <td><button style="font-size: 21px; background-color: transparent; border: transparent;background: transparent;
+                                                    border: transparent;
+                                                    font-size: 20px;
+                                                    position: unset;
+                                                    padding: 0px;"
+                              (click)="openModalDialog4(invoice,invoice.invoiceID)"> <i class="fa fa-edit"></i></button>
+                          </td>
+
+
+                          <td>
+                            <button class="w3-text-black material-icons"
+                              (click)="DeleteLocalInvoiceByID(invoice.invoiceNumber)" style="background: transparent; border: transparent;background: transparent;
+                                                        border: transparent;
+                                                        font-size: 20px;
+                                                        position: unset;
+                                                        padding: 0px;">delete</button>
+                          </td>
+                          <td>{{invoice.invoiceNumber}}</td>
+
+                          <td [ngSwitch]="invoice.invCurrencyID"><span *ngIf="invoice.invoiceValue"><span
+                                *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span>{{invoice.invoiceValue}}</span></td>
+
+                          <td>{{invoice.invoiceDate | date:'yyyy/MM/dd'}}</td>
+
+                          <td [ngSwitch]="invoice.invCurrencyID"><span *ngIf="invoice.invoiceValue_VAT"><span
+                                *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span>{{invoice.invoiceValue_VAT}}</span></td>
+
+                          <td>{{invoice.isInvoiceSent}}</td>
+
+                          <td>{{invoice.isPaymentDone}}</td>
+                          <td><a href="{{invoice.iAttachment}}" *ngIf="invoice.iAttachment">See Attachment</a></td>
+
+                        </tr>
+
+
+
+
+
+                        <tr *ngFor="let invoice of Invoicedetails2"
+                          [ngStyle]="{'display':attribute == true ? 'none' :'' }">
+                          <td></td>
+
+
+
+
+                          <td>
+                            <button class="w3-text-black material-icons " style="background: transparent; border: transparent;background: transparent;
+                                                         border: transparent;
+                                                         font-size: 20px;
+                                                         position: unset;
+                                                         padding: 0px;"><i class="fa fa-sticky-note"></i></button>
+                          </td>
+                          <td>{{invoice.invoiceNumber}}</td>
+
+                          <td [ngSwitch]="invoice.invCurrencyID"><span *ngIf="invoice.invoiceValue"><span
+                                *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span>{{invoice.invoiceValue}}</span></td>
+
+                          <td>{{invoice.invoiceDate | date:'yyyy/MM/dd'}}</td>
+
+                          <td [ngSwitch]="invoice.invCurrencyID"><span *ngIf="invoice.invoiceValue_VAT"><span
+                                *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span>{{invoice.invoiceValue_VAT}}</span></td>
+
+                          <td>{{invoice.isInvoiceSent}}</td>
+
+                          <td>{{invoice.isPaymentDone}}</td>
+                          <td><a href="{{invoice.iAttachment}}" *ngIf="invoice.iAttachment">See Attachment</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+
+                </div>
+
+                <button (click)="openModalDialogTwo()" style="background-color: #01008C;
+                                    border: 1px solid #01008C;
+                                    
+                                    color: white;
+                                    margin-top: 3 px;
+                                    margin-bottom: 200 px;
+                                    font-family: Montserrat;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    font-size: normal;
+                                    line-height: 23px;
+                                    color: white;
+                                    font-size: 13px;bottom: -62vh;" type="submit" [disabled]=selectdropdownflag
+                  [ngStyle]="{'background-color':selectdropdownflag? 'grey' :'#01008C' ,'border-color':selectdropdownflag? 'grey' :'#01008C','color':selectdropdownflag?'white':'white'}">Done</button>
+                <div class="backdrop" [ngStyle]="{'display':displaytwo}"></div>
+
+                <!-- modal -->
+                <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displaytwo}">
+                  <!-- modal-dialog -->
+                  <div class="modal-dialog" role="document">
+                    <!-- modal-content -->
+                    <div class="modal-content modalcontent">
+                      <!-- modal-header -->
+                      <div class="modal-header">
+                        <button type="button" class="close closex" aria-label="Close"
+                          (click)="closeModalDialogTwo()"><span aria-hidden="true">&times;</span></button>
+                        <!-- <h4 class="modal-title">Login</h4> -->
+                      </div>
+
+                      <!-- modal-body -->
+                      <div class="modal-body " style="padding: 34px 143px 34px 147px;">
+                        <form class="popopup">
+                          Are you sure you want to submit the new Invoice details?
+
+                        </form>
+                      </div>
+
+                      <!-- modal-footer -->
+                      <div class="modal-footer">
+                        <button type="submit" class="btn btn-default" style="bottom: 0px;
+                                             left: -170px;    background-color: #01008C;
+border: 1px solid #01008C;
+color: white;
+font-family: Montserrat;
+line-height: 23px;
+font-size: 13px" (click)="FinalSave()">Save</button>
+
+                        <button type="button" class="btn btn-default" style="bottom: 0px;
+ left: -193px;    background-color: #01008C;
+border: 1px solid #01008C;
+color: white;
+font-family: Montserrat;
+line-height: 23px;
+font-size: 13px" (click)="closeModalDialogTwo()">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <!---------------------------------------------------------------------------------------------------------->
+
+                <!--------------------------------------------------------------------------------------------------------->
+              </form>
+
+
+            </div>
+
+
+          </div>
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+            rel="stylesheet">
+
+    </div>
+
+  </section>
+</body>
+<div>
+
+</div>

@@ -1,0 +1,45 @@
+.navigationbar{
+    background-color: white;
+    bottom: 554px;
+    position: absolute;
+}
+
+.image{
+    position: relative;
+    float: left;
+    left: 18px;
+    width: 4%;
+}
+
+.projects{
+    position: absolute;
+    left: 929px;
+    top: 13px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13.7px;
+    line-height: 22px;
+    color: #01008C;
+}
+
+.reports{
+
+    
+    background-color: transparent;
+    color: black;
+    border: transparent;
+}
+
+.dd{
+    left: 1057px;
+    top: 12px;
+    background-color: white !important;
+    color: black;
+    position: absolute;
+}
+
+.dd2{
+    left: 1157px;
+        position: absolute;
+        top: 12px;}

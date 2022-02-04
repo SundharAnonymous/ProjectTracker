@@ -1,0 +1,272 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+
+}
+
+section{
+    position: relative;
+    width:100%;
+    height: 100vh;
+    display: flex;
+}
+
+section .imgBx{
+    position: relative;
+    width: 70%;
+    height: 100%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+}
+section .imgBx:before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    /*background: linear-gradient(225deg,#0d19ca,#f6fcff);
+    z-index: 1;
+    mix-blend-mode: screen;*/
+}
+
+section .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+section .logo img{
+    position: absolute;
+    width: 90px;
+    height: 90px ;
+    float: right;
+    right: 0;
+}
+
+section .textOnImage{
+    position: absolute;
+    bottom: 95px;
+    left: 50px;
+    font-size: 30px;
+    color: #01008C;
+    letter-spacing: 1px;
+
+}
+
+section .contentBx{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    height: 100%;
+}
+
+section .contentBx .formBx{
+    width: 70%;
+}
+
+section .contentBx .formBx h2{
+    color:#01008C;
+    font-weight: 600;
+    font-size: 1.5em;
+    
+    margin-bottom: 20px;
+    display: inline-block;
+    /*border-bottom: 4px solid rgba(45.00000111758709, 111.00000098347664, 185.00000417232513, 1);*/
+    letter-spacing: 1px;
+}
+
+section .contentBx .formBx .inputBx{
+    margin-bottom: 20px;
+}
+
+section .contentBx .formBx .inputBx span{
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #607d8b;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+section .contentBx .formBx .inputBx input{
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+    border-radius: 5px;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"]{
+    background: #01008C;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"]:hover{
+    background: #01008C;
+}
+
+section .contentBx .formBx .forgot{
+    margin-bottom: 10px;
+    color: #01008C;
+    font-weight: 300;
+    font-size: 10px;
+    float:right;
+    
+    
+}
+section .contentBx .formBx .or{
+    color: #01008C;
+    font-weight: 200;
+    font-size: 15px;
+    margin-bottom: 15px;
+    justify-content: center;
+    text-align: center;
+    
+}
+section .contentBx .formBx .inputBx1 .btnlogin{
+    background:#01008C;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 540;
+    border: 1px solid #01008C;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #01008C;
+    background: transparent;
+    border-radius: 5px;
+}
+
+section .contentBx .formBx .inputBx1 .btnlogin:hover{
+    background:#01008C;
+    color: white;
+}
+
+@media (max-width: 768px){
+    section .imgBx{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height:100%;
+    }
+
+    section .contentBx{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    
+    section .contentBx .formBx{
+        width: 100%;
+        padding: 40px;
+        background: rgb(255 255 255 / 0.9);
+        margin: 50px;
+    }
+
+    section .contentBx .formBx h2{
+        color: #01008C ;
+        text-align: center;
+        margin: 30px 0 10px;
+        font-weight: 500;
+    }
+
+    section .textOnImage{
+        top: 115px;
+        left: 50px;
+        font-size: 25px;
+        color: #01008C;
+        letter-spacing: 1px;
+        color: white;
+    
+    }
+
+}
+@media (max-width: 527px){
+
+    section .textOnImage{
+        top: 10px;
+        left: 50px;
+        font-size: 20px;
+        
+        letter-spacing: 1px;
+        color: white;
+    
+    }
+    section .logo img{
+        position: absolute;
+        width: 55px;
+        height: 55px ;
+        float: right;
+        right: 0;
+    }
+}
+@media (max-width: 1024px){
+
+    section .textOnImage{
+        bottom: 110px;
+        left: 50px;
+        font-size: 25px;
+        color: #01008C;
+        letter-spacing: 1px;
+        
+    
+    }
+}
+
+@media (max-width: 320px){
+    section .textOnImage{
+        top: 10px;
+        left: 50px;
+        font-size: 17px;
+        color: white;
+        letter-spacing: 1px;
+    }
+
+    section .logo img{
+        position: absolute;
+        width: 40px;
+        height: 40px ;
+        float: right;
+        right: 0;
+    }
+}
+
+@media (max-width: 768px){
+    section .textOnImage{
+        top: 10px;
+        left: 50px;
+        font-size: 17px;
+        color: white;
+        letter-spacing: 1px;
+        display: inline-block;
+    }
+}
+

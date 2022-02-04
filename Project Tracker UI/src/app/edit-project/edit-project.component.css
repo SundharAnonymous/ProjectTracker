@@ -1,0 +1,704 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+section .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;}
+
+header{
+    background-color: white;
+    height: 70px;
+}
+
+header .logo {
+    position: absolute;
+    width: 60px;
+    height: 60px ;
+    float: left;
+    left: 0;
+    top: 8px;
+    left: 50px;
+}
+
+header .userwrapper img {
+    width: 60px;
+    height: 60px ;
+    float: right;
+    left: 1000px;
+    top: 8px;
+
+}
+
+header .userwrapper{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-right: 1rem;
+float: right;
+}
+
+.innerBx{
+    /* width: 90%;
+    background-color: violet;
+    position: relative;
+    
+    ;
+     */
+position:absolute;
+width: 90%;
+background: #FFFFFF;
+box-shadow: 10px 10px 30px 12px rgba(239, 239, 239, 0.4);
+border-radius: 4px;
+margin: 0 auto;
+top: 16%;
+left: 5%;
+height:76%
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 7px;
+
+}
+.card{
+    background-color: #fff;
+    border-radius: 7px;
+    width: 95%;
+    margin-left: 2.5%;
+    height: 72vh;
+}
+.cardheader,
+.cardbuttons,
+.cardbody{
+    padding: 1rem;
+    
+}
+.cardheader{
+    display: flex;
+    border-radius: 7px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(196, 196, 196, 0.12);
+    width: 105.4%;
+    left: -2.7%;
+    position: relative;
+    height: 20%;
+}
+.cardstepper{
+    display:block;
+    border-radius: 7px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(196, 196, 196, 0.12);
+    width: 105.4%;
+    left: -2.7%;
+    position: relative;
+    height: 80%;
+    margin: auto;
+    
+    
+}
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 19px;
+    line-height: 1.5;
+    font-weight: 600;
+    left: 44%;
+    position: absolute;
+    top: -13%;
+}
+h6{
+    margin-top: 30px;
+    margin-bottom: 5px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: normal;
+    line-height: 13px;
+    color: #000000;
+    font-size: 13px;
+}
+
+    .cardbody{width: 100%;
+        background-color: white;
+        left: 0%;
+        position: absolute;
+        height: 81%;
+        overflow: auto;
+        overflow-x: hidden;
+
+    }
+
+thead tr{
+    background: #EFEFEF;
+border-radius: 8px 8px 0px 0px;
+
+}
+td{
+  padding: 1.3rem 1rem;
+  text-align: center;
+  border-bottom: 2px solid lightgrey;
+  font-family: Montserrat;
+  font-size: 13px;
+}
+
+.table-responsive{
+    width: 100%;
+    overflow-x: auto;
+}
+
+ button{
+  border-radius: 4px;
+  font-size: 1.2rem;
+  padding: 1rem 3.2rem;
+  float: right;
+  bottom: -62vh;
+  position: relative;
+  left: 5vh;
+}
+
+.cardbuttons input{
+    border-radius: 4px;
+    font-size: 1.2rem;
+    padding: 1rem 4.2rem;
+    border: 1px solid rgb(214, 213, 213);
+    width: 60%;
+
+}
+
+.action {
+    color: grey;
+}
+
+.textfield{
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 53%;
+    padding: 1%;
+}
+mat-horizontal-stepper{
+    top:200px
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 21px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+    font-size: 20%;
+    width: 54px;
+    height: 27px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .toggletextfield{
+    float: right;
+    right: 47%;
+    position: relative;
+    width: 43%;
+    top: -43px;
+  }
+
+  .datefield{
+
+    width: 25%;
+    top: -34px;
+    position: relative;
+    left: 161px;
+  }
+  .Verror{
+
+    color: red;
+
+    font-size: 12px;
+
+}
+
+.projectvalue{
+  top: -20px;
+    left: 37%;
+    width: 119%;
+}
+
+.projectvaluedd{
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 38%;
+  padding: 7px;
+  top: 14.5px;
+  position: relative;
+background-color: #C4C4C4;
+}
+.option{
+  background-color: white;
+}
+
+body{
+  font-size:1em;
+   height: 100%;
+}
+
+h3 {
+  font-family: Lato;
+  text-align: center;
+  color:	#0080ff;
+}
+
+.circles{
+  height: 24px;
+    width: 24px;
+    border: 0.1em solid #000;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+.activeprojdetinv{
+
+  height: 24px;
+    width: 24px;
+    border: 0.1em solid #000;
+    border-radius: 50%;
+    display: inline-block;
+    left: 27.1%;
+    position: absolute;
+    top: 42%;
+    background: linear-gradient(132.02deg, #2D6FB9 23.19%, rgba(70, 10, 148, 0.2) 123.46%);
+}
+
+.activerevinv{
+
+  height: 24px;
+    width: 24px;
+    border: 0.1em solid #000;
+    border-radius: 50%;
+    display: inline-block;
+    left: 501.5px;
+    position: absolute;
+    top: 42%;
+    background: linear-gradient(132.02deg, #2D6FB9 23.19%, rgba(70, 10, 148, 0.2) 123.46%);
+}
+.activepodetinv{
+
+  height: 24px;
+    width: 24px;
+    border: 0.1em solid #000;
+    border-radius: 50%;
+    display: inline-block;
+    left: 54.8%;
+    position: absolute;
+    top: 42%;
+    background: linear-gradient(132.02deg, #2D6FB9 23.19%, rgba(70, 10, 148, 0.2) 123.46%);
+}
+
+.activeinvdetinv{
+  height: 24px;
+    width: 24px;
+    border: 0.1em solid #000;
+    border-radius: 50%;
+    display: inline-block;
+    left: 71.1%;
+    position: absolute;
+    top: 42%;
+    background: linear-gradient(132.02deg, #2D6FB9 23.19%, rgba(70, 10, 148, 0.2) 123.46%);
+}
+.circle-desc-active{
+font-weight: bold;
+}
+
+.bar{
+  width: 18%;
+  margin-bottom:11px;
+  color:#000;
+  background-color:#000;
+  display: inline-block;
+  text-align:center;
+  margin:"0 auto";
+}
+.barprojectdetailsinv{
+  position: absolute;
+  left: 29%;
+  top: 55%;
+  width: 143.7px;
+  height: 1px;
+}
+
+.barrevenueinv{
+  position: absolute;
+  left: 522px;
+  top: 55%;
+  width: 152px;
+  height: 1px;
+}
+
+.barPOinv{
+  position: absolute;
+  left: 698px;
+  top: 55%;
+  width: 179px;
+  height: 1px;
+}
+.container{
+  min-width:320px;
+  margin: "0px auto";
+  text-align: center;
+}
+
+.circle-desc{
+ position: absolute;
+ top:80px;
+ font-size: 14px;
+ width: auto;
+ max-width:9.375em;
+ margin-left:-15px;
+}
+
+@media only screen and (max-width: 320px){
+   body {
+     font-size:20%
+  }
+} 
+
+/*extra small devices*/
+@media only screen and (max-width: 600px){
+   body {
+     font-size:40%
+  }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+   body {
+     font-size:60%
+  }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+     font-size:80%
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  body {
+     font-size:100%
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+   body {
+     font-size:120%
+  }
+}
+
+.projectdetailsinv{
+  position: absolute;
+  left: 24%;
+  top: 64%;
+  font-size: 13px;
+    font-family: Montserrat;
+    font-weight: 500;
+
+}
+
+.revenueinv{
+  position: absolute;
+    left: 39%;
+    top: 64%;
+    font-size: 13px;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+.podetailsinv{
+  position: absolute;
+    left: 53%;
+    top: 64%;
+    font-size: 13px;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+.invdetailsinv{
+  position: absolute;
+    left: 68%;
+    top: 64%;
+    font-size: 13px;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+.circlesprdetailsinv{
+  left: 27.1%;
+  position: absolute;
+  top: 42%;
+  font-size: 13px;
+  font-family: Montserrat;
+  font-weight: 500;   
+}
+
+.circlesrevinv{
+  left: 501.5px;
+  position: absolute;
+  top: 42%;
+}
+
+.circlesPOdetinv{
+  left: 54.8%;
+  position: absolute;
+  top: 42%;
+}
+
+.circlesINVdetinv{
+  left: 71.1%;
+  position: absolute;
+  top: 42%;
+}
+.addbutton{
+  border-radius: 50%;
+    height: 31px;
+    padding: 0px 0px 6px 0px;
+    width: 30px;
+    bottom: 18px;
+    left: 43%;
+    font-size: 21px;
+    background-color: #01008C;
+    border: 1px solid #01008C;
+    color: white;
+}
+
+.addpo{
+  left: 144%;
+  position: relative;
+  top: -2%;
+  font-size: 13px;
+  font-family: Montserrat;
+}
+
+.potable{
+  width: 74%;
+    right: -202px;
+    position: relative;
+    bottom: -152px;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-left: 10px solid rgb(218, 200, 43); /* yellow */
+}
+
+.ng-invalid:not(form)  {
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.backdrop {
+  background-color:rgba(0,0,0,0.6);
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+}
+
+.closex{
+  left: -21px;
+  top: 2px;
+  font-size: 26px;
+  padding: 0px;
+}
+
+.modalbody{
+  padding: 0px 0px 26px 63px;
+}
+
+.modalcontent{
+  top: 16rem;
+}
+
+.popopup{
+  text-align: center;
+}
+/* If Invoice is Not Present */
+.activeprojdet{
+
+  height: 24px;
+    width: 24px;
+    border: 0.1em solid #000;
+    border-radius: 50%;
+    display: inline-block;
+    left: 37.1%;
+    position: absolute;
+    top: 42%;
+    background: linear-gradient(132.02deg, #2D6FB9 23.19%, rgba(70, 10, 148, 0.2) 123.46%);
+}
+
+.activerev{
+
+  height: 24px;
+    width: 24px;
+    border: 0.1em solid #000;
+    border-radius: 50%;
+    display: inline-block;
+    left: 614px;
+    position: absolute;
+    top: 42%;
+    background: linear-gradient(132.02deg, #2D6FB9 23.19%, rgba(70, 10, 148, 0.2) 123.46%);
+}
+.activepodet{
+
+  height: 24px;
+    width: 24px;
+    border: 0.1em solid #000;
+    border-radius: 50%;
+    display: inline-block;
+    left: 64.1%;
+    position: absolute;
+    top: 42%;
+    background: linear-gradient(132.02deg, #2D6FB9 23.19%, rgba(70, 10, 148, 0.2) 123.46%);
+}
+
+.barprojectdetails{
+  position: absolute;
+  left: 39%;
+  top: 55%;
+  width: 135px;
+  height: 1px;
+}
+
+.barrevenue{
+  position: absolute;
+  left: 637px;
+  top: 55%;
+  width: 153px;
+  height: 1px;
+}
+
+.projectdetails{
+  position: absolute;
+  left: 34%;
+  top: 64%;
+  font-size: 13px;
+    font-family: Montserrat;
+    font-weight: 500;
+
+}
+
+.revenue{
+  position: absolute;
+    left: 49%;
+    top: 64%;
+    font-size: 13px;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+.podetails{
+  position: absolute;
+    left: 63%;
+    top: 64%;
+    font-size: 13px;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+.circlesprdetails{
+  left: 37.1%;
+  position: absolute;
+  top: 42%;
+  font-size: 13px;
+  font-family: Montserrat;
+  font-weight: 500;   
+}
+
+.circlesrev{
+  left: 614.5px;
+  position: absolute;
+  top: 42%;
+}
+
+.circlesPOdet{
+  left: 64.1%;
+  position: absolute;
+  top: 42%;
+}
+
+.finaldonebutton{
+background-color: #01008C;
+border: 1px solid #01008C;
+color: white;
+margin-top: 3 px;
+margin-bottom: 200 px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: normal;
+line-height: 23px;
+color: white;
+font-size: 13px;bottom: -62vh;
+}

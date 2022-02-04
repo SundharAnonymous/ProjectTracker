@@ -1,0 +1,343 @@
+<app-navigationbar></app-navigationbar>
+
+<body>
+
+  <section>
+    <div class="">
+      <!-- <img style="z-index: -1;" src="assets/images/rectangle1466.jpg" alt=""> -->
+      <button type="submit" class="dashboard" (click)="backtodashboard()">
+        < Back to Dashboard</button>
+          <div class="innerBx">
+
+
+            <div class="card">
+
+              <div class="cardheader">
+                <link
+                  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+                  rel="stylesheet">
+                <h1 >{{ProjectName}}</h1>
+                <h6 (click)="backtoinvoice()">Add invoice</h6>
+
+                <svg (click)="EditProject()" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-pen pencilbutton" viewBox="0 0 16 16">
+                  <path
+                    d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-download download" viewBox="0 0 16 16">
+                  <path
+                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                  <path
+                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-printer print" viewBox="0 0 16 16">
+                  <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+                  <path
+                    d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-share share" viewBox="0 0 16 16">
+                  <path
+                    d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+                </svg>
+              </div>
+
+
+              <form>
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+                <div class="cardbody" style="overflow-x: hidden;">
+                  <div class="row">
+                    <h5>Details</h5>
+                  </div>
+
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+                  <div class="container" *ngFor="let viewDetails of ViewDetails" >
+                    <div class="panel-group collapsiblepanel" id="accordion">
+                      <div class="panel panel-default panelheading">
+                        <div class="panel-heading panelheading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Project Details </a>
+                          </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse">
+                          <div class="panel-body">
+
+                            <div class="row">
+                              <div class="column">
+
+                                <div class="row-12">Project ID</div>
+                                <span class="textfield"> {{viewDetails.projectID}}</span>
+                                <div class="row-12">Project Name</div>
+                                <span class="textfield"> {{viewDetails.projectName}}</span>
+                                <div class="row-12">CRD Sent</div>
+                                <span class="textfield"> {{viewDetails.crdSentDate | date:'yyyy/MM/dd'}}</span>
+
+                              </div>
+
+
+                              <div class="column" [ngSwitch]="viewDetails.country">
+                                <div class="row-12">Country</div>
+                                <span class="textfield" *ngSwitchCase=108>United Kingdom </span>
+                                <span class="textfield" *ngSwitchCase=109>Spain </span>
+                                <span class="textfield" *ngSwitchCase=110>France </span>
+                                <div class="row-12">Project Description</div>
+                                <span class="textfield"> {{viewDetails.description}}</span>
+
+                              </div>
+
+
+                              <div class="column" [ngSwitch]="viewDetails.status">
+                                <div class="row-12">Date</div>
+                                <span class="textfield"> {{viewDetails.startDate | date:'yyyy/MM/dd'}}</span>
+                                <div class="row-12">Project Status</div>
+                                <span class="textfield" *ngSwitchCase=0>Opportunity </span>
+                                <span class="textfield"*ngSwitchCase=1>AwaitingTRD </span>
+                                <span class="textfield"*ngSwitchCase=2>AwaitingPO </span>
+                                <span class="textfield"*ngSwitchCase=3> InProgress</span>
+                                <span class="textfield"*ngSwitchCase=4>OnHold </span>
+                                <span class="textfield"*ngSwitchCase=5> Delivered</span>
+                                <span class="textfield"*ngSwitchCase=6> Invoiced</span>
+                                <span class="textfield"*ngSwitchCase=7> Closed</span>
+                                <span class="textfield"*ngSwitchCase=8>Cancelled </span>
+                                
+                                
+                              </div>
+
+
+                              <div class="column">
+                                <div class="row-12">Opportunity ID</div>
+                                <span class="textfield"> {{viewDetails.isOppIDCreated}}</span>
+                                <div class="row-12">TRD Received</div>
+                                <span class="textfield"> {{viewDetails.trdReceivedDate | date:'yyyy/MM/dd'}}</span>
+                                 </div>
+
+
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default panelheading">
+                        <div class="panel-heading panelheading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Revenue</a>
+                          </h4>
+                        </div>
+                        
+  
+  
+
+                        <!----------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+                        <div id="collapse2" class="panel-collapse collapse">
+
+                          <div class="row">
+                            <div class="column">
+
+                              <div class="row-12">Project Value</div>
+                              <span class="textfield" [ngSwitch]="viewDetails.currencyID" > <span *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span>{{viewDetails.projectValue}}</span>
+                              <div class="row-12">LTI Value</div>
+                              <span class="textfield" [ngSwitch]="viewDetails.currencyID" > <span *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span> {{viewDetails.ltiValue}}</span>
+
+
+                            </div>
+
+
+                            <div class="column">
+                              <div class="row-12">LTI Offshoring%</div>
+                              <span class="textfield"> {{viewDetails.ltiOffShoringPercentage}} <span *ngIf="viewDetails.ltiOffShoringPercentage">%</span></span>
+                              <div class="row-12">LTI Offshoring</div>
+                              <span class="textfield"> {{viewDetails.ltiOffShoring}}</span>
+
+                            </div>
+
+
+                            <div class="column">
+                              <div class="row-12">AKKA Contribution</div>
+                              <span class="textfield" [ngSwitch]="viewDetails.currencyID" > <span *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span> {{viewDetails.akkaContribution}}</span>
+                              <div class="row-12">AKKA Contractual Margin</div>
+                              <span class="textfield" [ngSwitch]="viewDetails.currencyID" > <span *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span> {{viewDetails.akkaContractualMargin}}</span>
+
+
+                            </div>
+                            <div class="column">
+                              <div class="row-12">AKKA Value</div>
+                              <span class="textfield" [ngSwitch]="viewDetails.currencyID" > <span *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span> {{viewDetails.akkaRevenue}}</span>
+
+
+                            </div>
+
+                          </div>
+
+
+                        </div>
+                      </div>
+
+<!-- -----------------------------------------------------------------------------------------------------------------------------------------            -->
+                      <div class="panel panel-default panelheading">
+                        <div class="panel-heading panelheading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">PO Details</a>
+                          </h4>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse">
+
+
+
+                          <div class="row" *ngFor="let poDetails of PODet">
+                            <!-- <table>
+                              <thead>
+                                <tr>
+                                  <td>Airbus PO Number</td>
+                                  <td>LTI PO Number</td>
+                                  <td>LTI PO Received Date</td>
+                                  <td>LTI PO Value</td>
+                                  <td>Attachments</td>
+                                </tr>
+                              </thead>
+                              <tr *ngFor="let poDetails of PODet">
+                                <td>{{poDetails.airbusPONumber}}</td>
+                                <td>{{poDetails.ltipoNumber}}</td>
+                                <td> {{poDetails.poReceivedDate}} </td>
+                                <td> {{poDetails.ltipoValue}}</td>
+                                <td>{{poDetails.attachment}}</td>
+                              </tr>
+                            </table> -->
+                            <div class="column">
+
+                              <div class="row-12">Airbus PO Number</div>
+                              <span class="textfield"> {{poDetails.airbusPONumber}}</span>
+                              <div class="row-12">LTI PO Number</div>
+                              <span class="textfield"> {{poDetails.ltipoNumber}}</span>
+
+
+                            </div>
+
+
+                            <div class="column">
+                              <div class="row-12">LTI PO Received Date</div>
+                              <span class="textfield"> {{poDetails.poReceivedDate | date:'yyyy/MM/dd'}} </span>
+
+                            </div>
+
+
+                            <div class="column">
+                              <div class="row-12">LTI PO Value</div>
+                              <span class="textfield"> {{poDetails.ltipoValue}}</span>
+
+                            </div>
+                            <div class="column">
+                              <div class="row-12">Attachments</div>
+                              <span class="textfield"><a  target="__blank">{{poDetails.attachment}} </a></span>
+
+
+                            </div>
+
+                          </div>
+
+                        </div>
+                      </div>
+
+
+
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+
+                      <div class="panel panel-default panelheading" *ngIf="InvoicePresent">
+                        <div class="panel-heading panelheading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Invoice Details</a>
+                          </h4>
+                        </div>
+                        
+  
+  
+
+                        <!----------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+                        <div id="collapse4" class="panel-collapse collapse">
+                          <div *ngFor="let inv of Invoicedetails2">
+                          <div class="row">
+                            <div class="column">
+
+                              <div class="row-12">Invoice Number</div>
+                              <span class="textfield"> {{inv.invoiceNumber}}</span>
+                              <div class="row-12">Invoice Value</div>
+                              <span class="textfield" [ngSwitch]="inv.invCurrencyID"> <span *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span>  {{inv.invoiceValue}}</span>
+
+
+                            </div>
+
+
+                            <div class="column">
+                              <div class="row-12">InvoiceValue VAT</div>
+                              <span class="textfield" [ngSwitch]="inv.invCurrencyID"> <span *ngSwitchCase=1>€</span>
+                              <span *ngSwitchCase=2>$</span>
+                              <span *ngSwitchCase=3>₹</span>
+                              <span *ngSwitchCase=4>£</span> {{inv.invoiceValue_VAT}} </span>
+                              <div class="row-12">Invoice Date</div>
+                              <span class="textfield"> {{inv.invoiceDate | date:'yyyy/MM/dd'}}</span>
+
+                            </div>
+
+
+                            <div class="column">
+                              <div class="row-12">Invoice Sent</div>
+                              <span class="textfield"> {{inv.isInvoiceSent}}</span>
+                              <div class="row-12">Is Payment Done</div>
+                              <span class="textfield"> {{inv.isPaymentDone}}</span>
+
+
+                            </div>
+                            <div class="column">
+                              <div class="row-12">Attachments</div>
+                              <span class="textfield"> {{inv.iAttachment}}</span>
+
+
+                            </div>
+                          </div>
+
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                
+              </form>
+            </div>
+          </div>
+    </div>
+  </section>
+</body>
+<div>
+
+</div>

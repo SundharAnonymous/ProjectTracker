@@ -1,0 +1,51 @@
+/* for dialog pop-up */
+/*@import 'node_modules/@angular/material/prebuilt-themes/purple-green.css';*/
+
+.btn-dialog-close{
+    width: 45px;
+    min-width: 0px !important;
+    height: 40px;
+    padding: 0px !important;
+    }
+    
+    /* mat-confirm-dialog (customised dialog) */
+     .mat-dialog-container {
+    border-radius: .25em .25em .4em .4em;
+    padding: 0px;
+    }
+    .content-container{
+    margin: 5px 5px 15px 5px;
+    color: rgb(73, 70, 70);
+    display: flex;
+    font-size: smaller;
+    }
+    #close-icon{
+    margin-left: auto;
+    order: 2;
+    font-weight: bolder;
+    }
+  #close-icon:hover{
+    cursor: pointer;
+    }
+    
+  #no{
+    height: 40px;
+    width: 50%;
+    background-color: #e91e13;
+    color:white;
+    border-radius: 0px;
+    }
+    
+  #Yes{
+    height: 40px;
+    width: 50%;
+    background-color: #01008C;
+    color:white;
+    border-radius: 0px;
+    }
+    
+  span.content-span{
+    padding: 35px 16px;
+    text-align: center;
+    font-size: 17px;
+    }

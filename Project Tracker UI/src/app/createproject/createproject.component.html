@@ -1,0 +1,597 @@
+<app-navigationbar></app-navigationbar>
+
+<body>
+
+  <section>
+    <div class="imgBx">
+      <img style="z-index: -1;" src="assets/images/rectangle1466.jpg" alt="">
+      <button type="submit" style="top: -82vh;
+             position: relative;
+             padding: 9px;
+             margin: -55px;
+             left: -193vh;font-family: Montserrat;
+         font-style: normal;
+          font-weight: normal;
+          background-color: transparent;
+          border-color:transparent ;
+                                              font-size: normal;
+                                              line-height: 25px;
+                                              color: black;
+                                              font-size: 13px;" (click)="backtodashboard()">
+        < Back to Dashboard</button>
+          <div class="innerBx">
+
+
+            <div class="card">
+
+              <div class="cardheader">
+                <link
+                  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+                  rel="stylesheet">
+                <h1>Create New Project</h1>
+                <div class="container">
+                  <!-- <span *ngFor="let item of counts;let i = index"> -->
+                  <span class="circle-desc" class="circle-desc-active projectdetails">Project Details</span>
+                  <span class="circle-desc" class="circle-desc-active revenue">Revenue</span>
+                  <span class="circle-desc" class="circle-desc-active podetails">PO Details</span>
+                  <span class="circles circlesprdetails"></span>
+                  <span class="circles circlesrev"></span>
+                  <span class="circles circlesPOdet"></span>
+                  <span class="bar barprojectdetails"></span>
+                  <span class="bar barrevenue"></span>
+                  <span class="activeprojdet"></span>
+                  <span class="activerev" *ngIf="div2Function && !div1"></span>
+                  <span class="activepodet" *ngIf="div3 && !div1 && !div2"></span>
+                  <!-- </span> -->
+                </div>
+              </div>
+
+
+              <form [formGroup]="newprojectform">
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+                <div *ngIf="div1" class="cardbody">
+
+                  <div class="row">
+                    <div class="col-sm-6"
+                      style="     margin-left: 15%; position: absolute; height: 230%; left: 0%; top: 0%;">
+                      <!-- Your first column here -->
+                      <link
+                        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+                        rel="stylesheet">
+                      <h6>Project Id *</h6>
+
+                      <span><input formControlName="projectID" class="textfield form-control" type="text"
+                          name="projectID" placeholder=""> </span>
+                      <div
+                        *ngIf="(newprojectform.controls.projectID.invalid && (newprojectform.controls.projectID.dirty || newprojectform.controls.projectID.touched))"
+                        class="Verror">
+                        <div *ngIf="newprojectform.controls.projectID.errors?.['required']">
+                          Project ID is required.
+                        </div>
+                      </div>
+
+                      <h6>Project Name</h6>
+                      <span><input formControlName="projectName" class="textfield form-control" type="text"
+                          name="projectName" placeholder="" id="" name=""> </span>
+                      <div
+                        *ngIf="(newprojectform.controls.projectName.invalid && (newprojectform.controls.projectName.dirty || newprojectform.controls.projectName.touched))"
+                        class="Verror">
+                        <div *ngIf="newprojectform.controls.projectName.errors?.['required']">
+                          Project Name is required.
+                        </div>
+                      </div>
+
+
+                      <h6>Country</h6>
+
+
+
+                      <select class="cars" id="cars" formControlName="country" class=" projectvaluedd form-control"
+                        type="number" placeholder="country">
+
+                        <option class="option" [ngValue]=108 type="number">United Kingdom</option>
+
+                        <option class="option" [ngValue]=109 type="number">Spain</option>
+
+                        <option class="option " [ngValue]=110 type="number">France</option>
+
+
+
+                      </select>
+                      <div
+                        *ngIf="(newprojectform.controls.country.invalid && (newprojectform.controls.country.dirty || newprojectform.controls.country.touched))"
+                        class="Verror">
+                        <div *ngIf="newprojectform.controls.country.errors?.['required']">
+                          Project Country is required.
+                        </div>
+                      </div>
+
+
+                      <h6>Project Description</h6>
+                      <textarea formControlName="description" class="form-control"
+                        style="width: 53%;background: #FFFFFF; border: 1px solid #C4C4C4; box-sizing: border-box;border-radius: 4px; padding:1%"
+                        id="w3review" name="w3review" rows="8" cols="39">
+                                                At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+                                                </textarea>
+
+
+
+
+
+                    </div>
+                    <div class="col-sm-6" style="margin-left: 7%; position: absolute; height: 230%; left: 50%;top: 0%;">
+                      <!-- Your second column here -->
+
+                      <h6>Date</h6>
+                      <span><input formControlName="startDate" class="textfield form-control" type="date" name=""
+                          placeholder="" id="" name=""> </span>
+
+                      <h6>Status</h6>
+                      <select class="cars" id="cars" formControlName="status" class=" projectvaluedd form-control"
+                        type="number" placeholder="Status">
+                        <option class="option" [ngValue]=0 type="number">Opportunity</option>
+                        <option class="option" [ngValue]=1 type="number">AwaitingTRD</option>
+                        <option class="option " [ngValue]=2 type="number">AwaitingPO</option>
+                        <option class="option " [ngValue]=3 type="number">InProgress</option>
+                        <option class="option " [ngValue]=4 type="number">OnHold</option>
+                        <option class="option " [ngValue]=5 type="number">Delivered</option>
+                        <option class="option " [ngValue]=6 type="number">Invoiced</option>
+                        <option class="option " [ngValue]=7 type="number">Closed</option>
+                        <option class="option " [ngValue]=8 type="number">Cancelled</option>
+                      </select>
+                      <div
+                        *ngIf="(newprojectform.controls.status.invalid && (newprojectform.controls.status.dirty || newprojectform.controls.status.touched))"
+                        class="Verror">
+                        <div *ngIf="newprojectform.controls.status.errors?.['required']">
+                          Project Status is required.
+                        </div>
+                      </div>
+
+
+                      <h6>Opportunity ID</h6>
+                      <label class="switch"><input type="checkbox" (click)=toggleDisplayisOppIDCreated()
+                          class="form-control" formControlName="isOppIDCreated"><span class="slider round"></span>
+                      </label>
+
+
+
+                      <h6>TRD Received</h6>
+                      <label class="switch"><input type="checkbox" (click)=toggleDisplayisTRDReceived()
+                          class="form-control" formControlName="isTRDReceived"><span class="slider round"></span>
+                      </label>
+                      <div [hidden]="!isShowtwo"><span><input formControlName="trdReceivedDate"
+                            class="textfield toggletextfield form-control" type="date" name="" placeholder="" id=""
+                            name=""> </span></div>
+
+
+                      <h6>CRD send</h6>
+                      <label class="switch"><input type="checkbox" (click)=toggleDisplayisCRDsend() class="form-control"
+                          formControlName="isCRDSent"><span class="slider round"></span> </label>
+                      <div [hidden]="!isShowthree"><span><input formControlName="crdSentDate"
+                            class="textfield toggletextfield form-control" type="date" name="" placeholder="" id=""
+                            name=""> </span></div>
+
+                      <!-- <h6>Add Attachment</h6>
+                                              <span><input class="textfield " type="file" name="" placeholder="" id="" name="" style="height: 18%;" > </span>
+                                               <input #attachment type="file" class="form-control" id="attachment" name="attachment" required ng-model="myFile1" (change)="docc_api(attachment.files)"/> 
+                                               -->
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <button (click)="div2Function()" *ngIf="div1 " style="background-color: #01008C;
+                                border: 1px solid #01008C;
+                                color: white;
+                                font-family: Montserrat;
+                                line-height: 23px;
+                                font-size: 13px;
+                                position:relative;
+                                
+                                ">Proceed</button>
+
+
+
+                <div *ngIf="div2 && !div1 && !div3">
+
+                  <div *ngIf="div2" class="cardbody" style="overflow-x:hidden;">
+
+                    <div class="row">
+
+                      <div class="col-sm-6"
+                        style="     margin-left: 15%; position: absolute; height: 230%; left: 0%; top: 0%;">
+                        <link
+                          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+                          rel="stylesheet">
+                        <h6>Project Value *</h6>
+                        <!-- <span><input formControlName = "projectValue"class="textfield form-control" type="number" name="" placeholder="" id="" name="" > </span> -->
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <select class="cars" id="cars" type="checkbox" class="projectvaluedd form-control"
+                              (change)="dropdown($event)" formControlName="currencyID">
+                              <option [ngValue]=1 class="option ">Euro</option>
+                              <option [ngValue]=2 class="option  ">Dollar</option>
+                              <option [ngValue]=3 class="option  ">Rupees</option>
+                              <option [ngValue]=4 class="option  ">Pound</option>
+                            </select>
+                          </div>
+                          <input type="number" formControlName="projectValue" class="form-control projectvalue"
+                            placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+
+                        <h6>LTI Offshoring % *</h6>
+                        <span><input formControlName="ltiOffShoringPercentage" class="textfield form-control"
+                            type="number" name="" placeholder="" id="" name=""> </span>
+
+                        <h6>AKKA Contribution *</h6>
+                        <!-- <span><input  formControlName = "akkaContribution"class="textfield form-control" type="number" name="" placeholder="" id="" name="" > </span> -->
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <select class="cars" id="cars" class="projectvaluedd">
+                              <option class="option">{{currency}}</option>
+                            </select>
+                          </div>
+                          <input type="number" formControlName="akkaContribution" class="form-control projectvalue"
+                            placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <h6>AKKA Value *</h6>
+                        <!-- <span><input  formControlName = "akkaRevenue" class="textfield form-control" type="number" name="" placeholder="" id="" name="" > </span> -->
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <select class="cars" id="cars" class="projectvaluedd">
+                              <option class="option">{{currency}}</option>
+                            </select>
+                          </div>
+                          <input type="number" formControlName="akkaRevenue" class="form-control projectvalue"
+                            placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6"
+                        style="margin-left: 7%; position: absolute; height: 230%; left: 50%;top: 0%;">
+                        <!-- Your second column here -->
+
+                        <link
+                          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+                          rel="stylesheet">
+                        <h6>LTI Value *</h6>
+                        <!-- <span><input formControlName = "ltiValue" class="textfield form-control" type="number" name="" placeholder="" id="" name="" > </span> -->
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <select class="cars" id="cars" class="projectvaluedd">
+                              <option class="option">{{currency}}</option>
+                            </select>
+                          </div>
+                          <input type="number" formControlName="ltiValue" class="form-control projectvalue"
+                            placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+
+                        <h6>LTI Offshoring *</h6>
+                        <!-- <span><input formControlName = "ltiOffShoring"  class="textfield form-control" type="number" name="" placeholder="" id="" name="" > </span> -->
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <select class="cars" id="cars" class="projectvaluedd">
+                              <option class="option">{{currency}}</option>
+                            </select>
+                          </div>
+                          <input type="number" formControlName="ltiOffShoring" class="form-control projectvalue"
+                            placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+
+                        <h6>AKKA Contractual Margin *</h6>
+                        <span><input formControlName="akkaContractualMargin" class="textfield form-control"
+                            type="number" name="" placeholder="" id="" name=""> </span>
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <button (click)="div3Function()" style="background-color: #01008C;
+                                        border: 1px solid #01008C;
+                                        color: white;
+                                        margin-top: 30 px;
+                                        margin-bottom: 5 px;
+                                        font-family: Montserrat;
+                                        font-style: normal;
+                                        font-weight: normal;
+                                        font-size: normal;
+                                        line-height: 23px;
+                                        color: white;
+                                        font-size: 13px;bottom: -62vh;" value="Next">Proceed</button>
+                  <button (click)="div3Function()" style="background-color: #01008C;
+                                         border: 1px solid #01008C;
+                                         color: white;
+                                         margin-top: 30 px;
+                                         margin-bottom: 5 px;
+                                         font-family: Montserrat;
+                                         font-style: normal;
+                                         font-weight: normal;
+                                         font-size: normal;
+                                         line-height: 23px;
+                                         color: white;
+                                         font-size: 13px;bottom: -388px; left: 16px;" value="Back">Back</button>
+                </div>
+
+
+                <div *ngIf="div3 && !div1 && !div2" class="cardbody" style="overflow-x: hidden;">
+                  <div class="row">
+                    <div class="col-sm-6"
+                      style="     margin-left: 15%; position: absolute; height: 230%; left: 0%; top: 0%;">
+
+                      <link
+                        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+                        rel="stylesheet">
+                      <h6>Airbus PO Number</h6>
+                      <label class="switch"><input type="checkbox" class="form-control"
+                          formControlName="poReceivedFromAirbus" (click)=toggleDisplayLTIpono()><span
+                          class="slider round"></span> </label>
+                      <div [hidden]="!isShowfour"><span><input class="textfield toggletextfield form-control"
+                            type="text" name="" placeholder="" id="" name="" formControlName="airbusPONumber"> </span>
+                      </div>
+
+                      <h6>LTI PO Details</h6>
+                      <button class="addbutton" (click)="openModalDialog()">+</button> <span class="addpo">Add PO</span>
+
+                      <div class="backdrop" [ngStyle]="{'display':display}"></div>
+
+                      <!-- modal -->
+                      <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+                        <!-- modal-dialog -->
+                        <div class="modal-dialog" role="document">
+                          <!-- modal-content -->
+                          <div class="modal-content">
+                            <!-- modal-header -->
+                            <div class="modal-header">
+                              <button type="button" class="close closex" aria-label="Close"
+                                (click)="closeModalDialog()"><span aria-hidden="true">&times;</span></button>
+                              <!-- <h4 class="modal-title">Login</h4> -->
+                            </div>
+
+                            <!-- modal-body -->
+                            <div class="modal-body modalbody">
+
+                              <h6>LTI PO Number</h6>
+                              <span><input formControlName="ltipoNumber" class="textfield form-control" type="text"
+                                  name="" placeholder="" id="" name=""> </span>
+
+                              <h6>LTI PO Received Date</h6>
+                              <span><input formControlName="poReceivedDate" class="textfield form-control" type="date"
+                                  name="" placeholder="" id="" name=""> </span>
+
+                              <h6>LTI PO Value</h6>
+                              <span><input formControlName="ltipoValue" class="textfield form-control" type="number"
+                                  name="" placeholder="" id="" name=""> </span>
+
+                              <h6>Attachment</h6>
+                              <span> <input #attachment type="file" class=" textfield" id="attachment" name="attachment"
+                                  (change)="handleUpload($event,attachment.files)" formControlName="poattachment"/></span>
+
+                            </div>
+
+                            <!-- modal-footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" style="bottom: 0px;
+                                                      left: 1px;    background-color: #01008C;
+    border: 1px solid #01008C;
+    color: white;
+    font-family: Montserrat;
+    line-height: 23px;
+    font-size: 13px" (click)="getPODetailsvalue()">Save</button>
+
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!-- modal -->
+                    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+                      <!-- modal-dialog -->
+                      <div class="modal-dialog" role="document">
+                        <!-- modal-content -->
+                        <div class="modal-content">
+                          <!-- modal-header -->
+                          <div class="modal-header">
+                            <button type="button" class="close closex" aria-label="Close"
+                              (click)="closeModalDialog4()"><span aria-hidden="true">&times;</span></button>
+                            <!-- <h4 class="modal-title">Login</h4> -->
+                          </div>
+
+                          <!-- modal-body -->
+                          <div class="modal-body modalbody">
+
+                            <h6>LTI PO Number</h6>
+                            <span><input formControlName="ltipoNumber" class="textfield form-control" type="text"
+                                name="" placeholder="" id="" name=""> </span>
+
+                            <h6>LTI PO Received Date</h6>
+                            <span><input formControlName="poReceivedDate" class="textfield form-control" type="date"
+                                name="" placeholder="" id="" name=""> </span>
+
+                            <h6>LTI PO Value</h6>
+                            <span><input formControlName="ltipoValue" class="textfield form-control" type="number"
+                                name="" placeholder="" id="" name=""> </span>
+
+                            <h6>Attachment</h6>
+                            <span> <input #attachment type="file" class=" textfield" id="attachment" name="attachment"
+                                (change)="handleUpload($event,attachment.files)" formControlName="poattachment"></span>
+
+
+                          </div>
+
+                          <!-- modal-footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" style="bottom: 0px;
+                                                  left: 1px;    background-color: #01008C;
+border: 1px solid #01008C;
+color: white;
+font-family: Montserrat;
+line-height: 23px;
+font-size: 13px" (click)="getPODetailsvalue()">Save</button>
+
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <!---->
+
+                    <table id="myTable" class="table-responsive potable">
+                      <thead>
+                        <tr>
+                          <link
+                            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+                            rel="stylesheet">
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>LTI PO Number</td>
+                          <td>LTI PO Received Date</td>
+                          <td>LTI PO Value</td>
+                          <td>Attachments</td>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let podetails of PODetails">
+                          <td><button style="font-size: 21px; background-color: transparent; border: transparent;background: transparent;
+                                                    border: transparent;
+                                                    font-size: 20px;
+                                                    position: unset;
+                                                    padding: 0px;" (click)="openModalDialog4(podetails)"> <i
+                                class="fa fa-edit"></i></button></td>
+
+
+                          <td>
+                            <button class="w3-text-black material-icons" style="background: transparent; border: transparent;background: transparent;
+                                                         border: transparent;
+                                                         font-size: 20px;
+                                                         position: unset;
+                                                         padding: 0px;"
+                              (click)="deletePObyId(podetails.ltipoNumber)">delete</button>
+                          </td>
+                          <td>{{podetails.ltipoNumber}}</td>
+                          <td>{{podetails.poReceivedDate}}</td>
+                          <td>{{podetails.ltipoValue}}</td>
+                          <td>Attachment</td>
+
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+
+                </div>
+
+                <button (click)="openModalDialogTwo()" *ngIf="div3 && !div1" style="background-color: #01008C;
+                                    border: 1px solid #01008C;
+                                    color: white;
+                                    margin-top: 3 px;
+                                    margin-bottom: 200 px;
+                                    font-family: Montserrat;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    font-size: normal;
+                                    line-height: 23px;
+                                    color: white;
+                                    font-size: 13px;bottom: -62vh;" type="submit">Done</button>
+                <div class="backdrop" [ngStyle]="{'display':displaytwo}"></div>
+
+                <!-- modal -->
+                <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displaytwo}">
+                  <!-- modal-dialog -->
+                  <div class="modal-dialog" role="document">
+                    <!-- modal-content -->
+                    <div class="modal-content modalcontent">
+                      <!-- modal-header -->
+                      <div class="modal-header">
+                        <button type="button" class="close closex" aria-label="Close"
+                          (click)="closeModalDialogTwo()"><span aria-hidden="true">&times;</span></button>
+                        <!-- <h4 class="modal-title">Login</h4> -->
+                      </div>
+
+                      <!-- modal-body -->
+                      <div class="modal-body " style="padding: 34px 143px 34px 147px;">
+                        <form class="popopup">
+                          Are you sure you want to submit the new project details?
+
+                        </form>
+                      </div>
+
+                      <!-- modal-footer -->
+                      <div class="modal-footer">
+                        <button type="submit" class="btn btn-default" style="bottom: 0px;
+                                             left: -170px;    background-color: #01008C;
+border: 1px solid #01008C;
+color: white;
+font-family: Montserrat;
+line-height: 23px;
+font-size: 13px" (click)="AddProject()">Save</button>
+
+                        <button type="button" class="btn btn-default" style="bottom: 0px;
+ left: -193px;    background-color: #01008C;
+border: 1px solid #01008C;
+color: white;
+font-family: Montserrat;
+line-height: 23px;
+font-size: 13px" (click)="closeModalDialogTwo()">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button (click)="div2Function()" *ngIf="div3 &&!div1" style="background-color: #01008C;
+                                    border: 1px solid #01008C;
+                                    color: white;
+                                    margin-top: 3 px;
+                                    margin-bottom: 200 px;
+                                    font-family: Montserrat;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    font-size: normal;
+                                    line-height: 23px;
+                                    color: white;
+                                    margin-right: 20px;
+                                    font-size: 13px;bottom: -62vh;">Back</button>
+              </form>
+
+
+            </div>
+
+
+          </div>
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+            rel="stylesheet">
+
+    </div>
+
+  </section>
+</body>
+<div>
+
+</div>

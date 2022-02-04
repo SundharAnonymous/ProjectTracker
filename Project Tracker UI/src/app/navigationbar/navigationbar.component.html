@@ -1,0 +1,27 @@
+
+    <div><img style="z-index: -1;width:81%" src="assets/images/rectangle1466.jpg" alt="">
+      <nav class ="navbar navbar-default navigationbar">
+          <img class="image"src="assets/images/rectangle_1462.png" alt="">
+          <span class="projects" (click)="backtodashboard()" style="cursor: pointer;" >Projects</span>
+          <div class="dropdown dd">
+              <button class="dropdown-toggle reports" type="button" data-toggle="dropdown">Reports
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a (click)="InvoiceReports()" style="cursor: pointer;">Invoices</a></li>
+                <li><a (click)="POReports()" style="cursor: pointer;">POs</a></li>
+              </ul>
+            </div>
+            <!-- [ngStyle]="{'color':activelink==false? '#01008C' :'black'}" -->
+            <div class="dropdown dd dd2">
+              <button *ngIf= isLoggedIn() class="dropdown-toggle reports" type="button" data-toggle="dropdown">{{getName()}}
+              <span class="caret"></span></button>
+              <button *ngIf= !isLoggedIn() class="dropdown-toggle reports" type="button" data-toggle="dropdown">{{user}}
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#"(click)="locallogout()">Logout</a></li>
+                <li><a href="#"></a></li>
+              </ul>
+            </div>
+      </nav>
+  </div>
+     
